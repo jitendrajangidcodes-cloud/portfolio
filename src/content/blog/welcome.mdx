@@ -1,0 +1,34 @@
+---
+title: Building a portfolio that lasts ten years
+description: Why I separated content from presentation, and how this site stays effortless to update.
+date: 2026-06-30
+tags: [meta, architecture]
+draft: false
+---
+
+This site is built on one idea: **content should be separate from presentation**.
+
+Every project, skill, and certification lives as plain data in `src/content/`. The
+components never hard-code a project name or a job title — they render whatever the
+data says. Adding a new project is a few lines in `projects.ts`; the cards, detail
+page, filters, and SEO tags all update themselves.
+
+## Why it matters
+
+A portfolio that's painful to update goes stale. By keeping data and UI apart, I can
+add a project in a minute, and redesign the whole site without touching a single fact.
+
+## The stack
+
+- **Next.js** with static export, so it deploys free to GitHub Pages
+- **Tailwind + a small design-token system** for a consistent, themeable look
+- **Framer Motion** and a sparing touch of **Three.js** for motion that earns its place
+- **A build-time GitHub sync** so my open-source stats are always current
+
+## What's next
+
+This is version one. The roadmap: real blog posts, deeper project write-ups, and
+automated Lighthouse checks in CI. The foundation is built to grow.
+
+> Replace this starter post with your own writing — delete the file or edit it in
+> `src/content/blog/welcome.mdx`.

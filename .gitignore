@@ -1,0 +1,39 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# Note: src/content/generated/github.json IS committed as a build-safe fallback.
+# scripts/fetch-github.mjs overwrites it at build time with live data.
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+.vscode/*
+!.vscode/extensions.json
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
