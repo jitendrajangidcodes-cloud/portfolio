@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image', title: siteConfig.title, description: siteConfig.description },
   robots: { index: true, follow: true },
-  icons: { icon: '/favicon.svg' },
+  // basePath isn't auto-applied to metadata icons under static export, so prefix it.
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.svg` },
 };
 
 export const viewport: Viewport = {

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { techIcons } from '@/lib/tech';
+import { withBasePath } from '@/lib/utils';
 
 /**
  * Infinite, dual-row brand-logo marquee. Two rows scroll in opposite directions for a
@@ -23,7 +24,13 @@ function Row({ reverse = false }: { reverse?: boolean }) {
             className="flex items-center gap-2.5 rounded-xl border border-border bg-card/70 px-4 py-2.5 backdrop-blur-sm transition-colors hover:border-primary/50"
             title={t.label}
           >
-            <Image src={t.src} alt={`${t.label} logo`} width={28} height={28} className="h-7 w-7" />
+            <Image
+              src={withBasePath(t.src)}
+              alt={`${t.label} logo`}
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
             <span className="whitespace-nowrap text-sm font-medium text-muted-foreground">
               {t.label}
             </span>

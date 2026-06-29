@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { techIcons } from '@/lib/tech';
+import { withBasePath } from '@/lib/utils';
 
 /**
  * A glowing grid of tech logos. Each tile lifts and reveals a soft radial glow on hover,
@@ -27,7 +28,7 @@ export function TechStack() {
         >
           <span className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(120px_circle_at_center,hsl(var(--primary)/0.15),transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <Image
-            src={t.src}
+            src={withBasePath(t.src)}
             alt={`${t.label} logo`}
             width={40}
             height={40}
