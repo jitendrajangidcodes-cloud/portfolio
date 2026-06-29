@@ -15,6 +15,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "sync:github": "node scripts/fetch-github.mjs",
+    "sync:icons": "node scripts/fetch-tech-icons.mjs",
     "prebuild": "node scripts/fetch-github.mjs"
   },
   "dependencies": {

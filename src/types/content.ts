@@ -122,6 +122,8 @@ export interface Profile {
   bio: string[];
   location?: string;
   email: string;
+  /** Optional secondary contact email shown alongside the primary. */
+  altEmail?: string;
   githubUser: string;
   avatar?: string;
   socials: SocialLink[];

@@ -1,0 +1,104 @@
+{
+  "icons": [
+    {
+      "label": "React",
+      "src": "/tech/react.svg"
+    },
+    {
+      "label": "Next.js",
+      "src": "/tech/next-js.svg"
+    },
+    {
+      "label": "TypeScript",
+      "src": "/tech/typescript.svg"
+    },
+    {
+      "label": "JavaScript",
+      "src": "/tech/javascript.svg"
+    },
+    {
+      "label": "Node.js",
+      "src": "/tech/node-js.svg"
+    },
+    {
+      "label": "Express",
+      "src": "/tech/express.svg"
+    },
+    {
+      "label": "Angular",
+      "src": "/tech/angular.svg"
+    },
+    {
+      "label": "MongoDB",
+      "src": "/tech/mongodb.svg"
+    },
+    {
+      "label": "Redis",
+      "src": "/tech/redis.svg"
+    },
+    {
+      "label": "Amazon AWS",
+      "src": "/tech/amazon-aws.svg"
+    },
+    {
+      "label": "Google Cloud",
+      "src": "/tech/google-cloud.svg"
+    },
+    {
+      "label": "Docker",
+      "src": "/tech/docker.svg"
+    },
+    {
+      "label": "Jenkins",
+      "src": "/tech/jenkins.svg"
+    },
+    {
+      "label": "Git",
+      "src": "/tech/git.svg"
+    },
+    {
+      "label": "GitHub",
+      "src": "/tech/github.svg"
+    },
+    {
+      "label": "Tailwind CSS",
+      "src": "/tech/tailwind-css.svg"
+    },
+    {
+      "label": "Sass",
+      "src": "/tech/sass.svg"
+    },
+    {
+      "label": "HTML5",
+      "src": "/tech/html5.svg"
+    },
+    {
+      "label": "CSS3",
+      "src": "/tech/css3.svg"
+    },
+    {
+      "label": "Firebase",
+      "src": "/tech/firebase.svg"
+    },
+    {
+      "label": "Flutter",
+      "src": "/tech/flutter.svg"
+    },
+    {
+      "label": "Dart",
+      "src": "/tech/dart.svg"
+    },
+    {
+      "label": "Kotlin",
+      "src": "/tech/kotlin.svg"
+    },
+    {
+      "label": "Rust",
+      "src": "/tech/rust.svg"
+    },
+    {
+      "label": "Linux",
+      "src": "/tech/linux.svg"
+    }
+  ]
+}

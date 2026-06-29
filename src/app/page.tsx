@@ -6,6 +6,8 @@ import { Section, SectionHeading } from '@/components/layout/section';
 import { Reveal, StaggerGroup } from '@/components/motion/reveal';
 import { ProjectCard } from '@/components/cards/project-card';
 import { CapabilityCard } from '@/components/cards/capability-card';
+import { TechMarquee } from '@/components/sections/tech-marquee';
+import { TechStack } from '@/components/sections/tech-stack';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { featuredProjects } from '@/content/projects';
@@ -31,6 +33,16 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Tech marquee — a living wall of the stack */}
+      <section className="border-b border-border py-10">
+        <div className="container">
+          <p className="mb-5 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+            Technologies I build with
+          </p>
+        </div>
+        <TechMarquee />
       </section>
 
       {/* Featured projects */}
@@ -73,8 +85,18 @@ export default function HomePage() {
         </StaggerGroup>
       </Section>
 
-      {/* Skills snapshot */}
+      {/* Tech stack grid */}
       <Section>
+        <SectionHeading
+          eyebrow="Stack"
+          title="My tech stack"
+          lead="The languages, frameworks, clouds and tools I reach for across web, cloud and mobile."
+        />
+        <TechStack />
+      </Section>
+
+      {/* Skills snapshot */}
+      <Section className="bg-card/40">
         <SectionHeading
           eyebrow="Toolkit"
           title="Skills at a glance"

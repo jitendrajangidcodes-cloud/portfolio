@@ -41,6 +41,21 @@ export default function ContactPage() {
               </div>
             </a>
 
+            {profile.altEmail && (
+              <a
+                href={`mailto:${profile.altEmail}`}
+                className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
+              >
+                <span className="grid size-11 place-items-center rounded-xl bg-accent/10 text-accent">
+                  <Icons.AtSign className="size-5" />
+                </span>
+                <div>
+                  <p className="font-medium">Email (alternate)</p>
+                  <p className="text-sm text-muted-foreground">{profile.altEmail}</p>
+                </div>
+              </a>
+            )}
+
             <a
               href="tel:+919929003090"
               className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
