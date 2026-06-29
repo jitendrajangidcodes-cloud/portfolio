@@ -1,62 +1,82 @@
 import type { SkillGroup } from '@/types/content';
 
 /**
- * Skills are grouped and self-rated. Keep `proficiency` honest — it only drives a
- * visual meter, not a claim. Adjust freely; add or remove groups as you grow.
+ * Skills grouped by domain, seeded from your CV and projects. `proficiency` drives a
+ * visual meter only — keep it honest. Order reflects your professional focus:
+ * full-stack web & cloud first, with mobile/security as additional strengths.
  */
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Mobile',
-    description: 'Cross-platform apps with native depth where it counts.',
-    icon: 'Smartphone',
+    category: 'Front-End',
+    description: 'User-friendly, responsive interfaces at scale.',
+    icon: 'LayoutDashboard',
     skills: [
-      { name: 'Flutter', level: 'advanced', proficiency: 88 },
-      { name: 'Dart', level: 'advanced', proficiency: 88 },
-      { name: 'Riverpod', level: 'proficient', proficiency: 78 },
-      { name: 'Drift (SQLite)', level: 'proficient', proficiency: 75 },
-      { name: 'Kotlin (Android system)', level: 'proficient', proficiency: 70, note: 'AlarmManager, services, receivers' },
+      { name: 'React', level: 'advanced', proficiency: 90 },
+      { name: 'Next.js', level: 'advanced', proficiency: 86 },
+      { name: 'Angular', level: 'advanced', proficiency: 84 },
+      { name: 'TypeScript / JavaScript', level: 'advanced', proficiency: 88 },
+      { name: 'Tailwind / Sass / Bootstrap', level: 'advanced', proficiency: 85, note: 'Semantic, responsive HTML' },
     ],
   },
   {
-    category: 'Security & Privacy',
-    description: 'Encryption-first, offline-first, zero-knowledge by design.',
-    icon: 'ShieldCheck',
+    category: 'Back-End',
+    description: 'Scalable services, APIs, and microservices.',
+    icon: 'Server',
     skills: [
-      { name: 'End-to-end encryption', level: 'proficient', proficiency: 78, note: 'Signal Protocol: X3DH, Double Ratchet' },
-      { name: 'On-device OCR & biometrics', level: 'proficient', proficiency: 72 },
-      { name: 'Secure local storage', level: 'proficient', proficiency: 76 },
-      { name: 'Threat-aware design', level: 'proficient', proficiency: 70 },
+      { name: 'Node.js', level: 'advanced', proficiency: 90 },
+      { name: 'Express.js', level: 'advanced', proficiency: 88 },
+      { name: 'RESTful APIs & microservices', level: 'advanced', proficiency: 86 },
+      { name: 'Cron jobs & background workers', level: 'proficient', proficiency: 80 },
     ],
   },
   {
-    category: 'Cloud & Sync',
-    description: 'Keeping data coherent across devices and the cloud.',
+    category: 'Databases',
+    description: 'Modelling, caching, and optimisation.',
+    icon: 'Database',
+    skills: [
+      { name: 'MongoDB', level: 'advanced', proficiency: 88 },
+      { name: 'Mongoose ORM', level: 'advanced', proficiency: 85 },
+      { name: 'Redis (caching)', level: 'proficient', proficiency: 80 },
+    ],
+  },
+  {
+    category: 'Cloud',
+    description: 'Deploying and operating across major clouds.',
     icon: 'CloudCog',
     skills: [
-      { name: 'Google Drive API', level: 'proficient', proficiency: 72 },
-      { name: 'Two-way sync engines', level: 'proficient', proficiency: 70 },
-      { name: 'LAN sync', level: 'proficient', proficiency: 68 },
-      { name: 'GCP / gcloud', level: 'learning', proficiency: 55 },
+      { name: 'AWS (EC2, S3, Lambda)', level: 'advanced', proficiency: 84 },
+      { name: 'Google Cloud (Firebase, Functions)', level: 'proficient', proficiency: 80 },
     ],
   },
   {
-    category: 'Desktop & Systems',
-    description: 'Native-feeling desktop tools and developer tooling.',
-    icon: 'MonitorSmartphone',
-    skills: [
-      { name: 'Tauri 2', level: 'proficient', proficiency: 72 },
-      { name: 'Rust', level: 'learning', proficiency: 58 },
-      { name: 'TypeScript / React', level: 'proficient', proficiency: 74 },
-    ],
-  },
-  {
-    category: 'Automation & Integrations',
-    description: 'Wiring tools together to remove manual work.',
+    category: 'DevOps & CI/CD',
+    description: 'Automated, repeatable delivery.',
     icon: 'Workflow',
     skills: [
-      { name: 'GitHub Actions / CI', level: 'proficient', proficiency: 72 },
-      { name: 'Jira / Slack / Google APIs', level: 'proficient', proficiency: 68 },
-      { name: 'Shell & scripting', level: 'proficient', proficiency: 70 },
+      { name: 'Git & GitHub Actions', level: 'advanced', proficiency: 86 },
+      { name: 'Docker', level: 'proficient', proficiency: 80 },
+      { name: 'Jenkins', level: 'proficient', proficiency: 76 },
+    ],
+  },
+  {
+    category: 'Security & Leadership',
+    description: 'Secure systems and the teams that build them.',
+    icon: 'ShieldCheck',
+    skills: [
+      { name: 'OWASP & auth strategies', level: 'advanced', proficiency: 82 },
+      { name: 'Performance optimisation', level: 'advanced', proficiency: 84 },
+      { name: 'Team leadership & mentorship', level: 'advanced', proficiency: 88 },
+    ],
+  },
+  {
+    category: 'Mobile & Desktop',
+    description: 'Privacy-first apps beyond the web (independent work).',
+    icon: 'Smartphone',
+    skills: [
+      { name: 'Flutter & Dart', level: 'advanced', proficiency: 86 },
+      { name: 'Kotlin (Android system)', level: 'proficient', proficiency: 70 },
+      { name: 'Tauri 2 & Rust', level: 'learning', proficiency: 58 },
+      { name: 'E2E encryption (Signal Protocol)', level: 'proficient', proficiency: 72 },
     ],
   },
 ];

@@ -45,7 +45,10 @@ export function personJsonLd() {
     '@type': 'Person',
     name: siteConfig.name,
     url: siteConfig.url,
-    jobTitle: 'Software Engineer',
+    jobTitle: 'Technical Lead · Full-Stack Engineer',
+    worksFor: { '@type': 'Organization', name: 'Ongraph Technologies' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Arya College' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Jaipur', addressCountry: 'IN' },
     sameAs: ['https://github.com/jitendrajangidcodes-cloud'],
   };
 }

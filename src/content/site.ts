@@ -5,23 +5,25 @@
 export const siteConfig = {
   name: 'Jitendra Jangid',
   shortName: 'Jitendra',
-  title: 'Jitendra Jangid — Software Engineer',
+  title: 'Jitendra Jangid — Technical Lead & Full-Stack Engineer',
   description:
-    'Software engineer building privacy-first, offline-capable apps across mobile, desktop ' +
-    'and cloud — encrypted vaults, E2E messaging, sync systems and automation.',
+    'Technical Lead and full-stack engineer with 9+ years building scalable web apps — ' +
+    'MEAN stack, React/Next.js, AWS & GCP — and privacy-first mobile apps on the side.',
   // TODO: set to your real deployed origin, e.g. a custom domain or
   // https://jitendrajangidcodes-cloud.github.io/portfolio
   url: 'https://jitendrajangidcodes-cloud.github.io/portfolio',
   locale: 'en_US',
   keywords: [
     'Jitendra Jangid',
-    'Software Engineer',
+    'Technical Lead',
+    'Full-Stack Developer',
+    'MEAN Stack',
+    'React',
+    'Next.js',
+    'Node.js',
+    'AWS',
+    'Google Cloud',
     'Flutter Developer',
-    'Mobile Developer',
-    'Security Engineer',
-    'Tauri',
-    'Rust',
-    'End-to-end encryption',
     'Portfolio',
   ],
 } as const;

@@ -3,53 +3,53 @@ import type { Profile } from '@/types/content';
 /**
  * SINGLE SOURCE OF TRUTH for who you are.
  *
- * Everything here is editable text — change it freely, no component edits needed.
- * Lines marked `// TODO` are placeholders to keep the site truthful: replace them
- * with real facts or delete them. Never invent employers, awards, or years.
+ * Seeded from your CV (Technical Lead @ Ongraph Technologies) and your real
+ * repositories. Everything here is editable text — change it freely, no component
+ * edits needed. Nothing is invented; numbers are conservative and verifiable.
  */
 export const profile: Profile = {
   name: 'Jitendra Jangid',
-  title: 'Software Engineer — Mobile, Security & Systems',
+  title: 'Technical Lead · Full-Stack Engineer',
   roles: [
-    'Flutter & Dart',
-    'Secure mobile apps',
-    'Cloud & sync systems',
-    'Desktop with Tauri & Rust',
-    'Automation & integrations',
+    'Full-stack web apps',
+    'MEAN & React / Next.js',
+    'Cloud on AWS & GCP',
+    'Scalable APIs & microservices',
+    'Privacy-first mobile apps',
+    'Teams & mentorship',
   ],
   summary:
-    'I build privacy-first, offline-capable apps across mobile, desktop and cloud — ' +
-    'from encrypted vaults and end-to-end-encrypted messaging to LAN sync tools and ' +
-    'productivity automation.',
+    'Technical Lead and full-stack engineer with 9+ years building and shipping scalable ' +
+    'web applications — MEAN stack, React/Next.js, and cloud on AWS and GCP. I lead teams, ' +
+    'design APIs and microservices, and on the side build privacy-first mobile apps.',
   bio: [
-    // TODO: Replace with your own words. This draft only restates what your repos show.
-    'I’m a software engineer focused on shipping real, polished products. My work ' +
-      'centres on mobile development with Flutter, with a strong bias toward privacy, ' +
-      'offline-first design, and security-hardened storage.',
-    'Recent projects span an end-to-end-encrypted chat app built on the Signal Protocol, ' +
-      'an offline biometric-locked card vault with on-device OCR, a two-way Google Drive ' +
-      'sync engine, and a Tauri 2 desktop suite for developer workflow automation.',
-    'I care about the details that separate a demo from a product: exact-time alarms that ' +
-      'survive a locked screen, encryption that never phones home, and tooling that stays ' +
-      'maintainable for years.',
+    'I’m a Technical Lead at Ongraph Technologies in Jaipur, where I’ve grown over 9+ years ' +
+      'from Junior to Senior Software Engineer to Technical Lead. I architect high-performance ' +
+      'web applications on the MEAN stack (MongoDB, Express, Angular, Node) and React/Next.js, ' +
+      'and deploy them on AWS and Google Cloud.',
+    'My day-to-day spans microservices, RESTful APIs, database and caching optimisation ' +
+      '(MongoDB, Mongoose, Redis), and CI/CD with Docker, Jenkins and GitHub Actions — while ' +
+      'leading agile teams, mentoring developers, and keeping security (OWASP, auth) front of mind.',
+    'Outside of work I build privacy-first, offline-capable mobile apps in Flutter: an ' +
+      'end-to-end-encrypted chat app on the Signal Protocol, an offline biometric card vault ' +
+      'with on-device OCR, and a Tauri 2 desktop suite. I care about the details that turn a ' +
+      'demo into a product people can rely on.',
   ],
-  location: 'India', // TODO: confirm / refine
-  email: 'ailancers1.code@gmail.com',
+  location: 'Jaipur, India',
+  email: 'jitendra.jangid.pro@gmail.com',
   githubUser: 'jitendrajangidcodes-cloud',
-  avatar: '/images/avatar.svg',
+  avatar: '/images/avatar.svg', // TODO: drop a real photo at /public/images/avatar.jpg and update
   socials: [
     { label: 'GitHub', href: 'https://github.com/jitendrajangidcodes-cloud', icon: 'Github' },
-    // TODO: add your real profiles, or remove the ones you don't use.
+    // TODO: add your real LinkedIn/X URLs, or remove entries you don't use.
     { label: 'LinkedIn', href: '#', icon: 'Linkedin' },
-    { label: 'X / Twitter', href: '#', icon: 'Twitter' },
-    { label: 'Email', href: 'mailto:ailancers1.code@gmail.com', icon: 'Mail' },
+    { label: 'Email', href: 'mailto:jitendra.jangid.pro@gmail.com', icon: 'Mail' },
+    { label: 'Phone', href: 'tel:+919929003090', icon: 'Phone' },
   ],
   stats: [
-    // Honest, self-reported. Update as you grow. The "Public repos" stat is replaced
-    // automatically with the live GitHub number when the build-time sync runs.
-    { label: 'Shipped projects', value: '6+', hint: 'Mobile, desktop & cloud' },
-    { label: 'Core domains', value: '4', hint: 'Mobile · Security · Cloud · Desktop' },
-    { label: 'Primary stack', value: 'Flutter', hint: 'Dart, Kotlin, Rust' },
+    { label: 'Years of experience', value: '9+', hint: 'Since 2016' },
+    { label: 'Current role', value: 'Tech Lead', hint: 'Ongraph Technologies' },
+    { label: 'Core stack', value: 'MEAN', hint: 'React · Next · Node · Cloud' },
   ],
   resumeUrl: undefined, // TODO: drop a /public/resume.pdf and set '/resume.pdf'
   availableForWork: true,

@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <PageHeader
         eyebrow="Work"
         title="Projects"
-        lead="End-to-end products I’ve designed and built. Filter by platform, or open any project for the full story."
+        lead="My personal and independent projects — designed and built end to end. My professional work at Ongraph Technologies is proprietary, so it’s summarised under Experience rather than shown as public code."
       />
       <Section>
         <ProjectGallery projects={sortedProjects} />

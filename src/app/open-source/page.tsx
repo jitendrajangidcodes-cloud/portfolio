@@ -27,7 +27,7 @@ export default function OpenSourcePage() {
       <PageHeader
         eyebrow="Public work"
         title="Open Source"
-        lead="My public repositories, synced from GitHub at build time. Stars, forks and languages update automatically with each deploy."
+        lead="My personal public repositories, synced from GitHub at build time. (Professional work at Ongraph is private.) Stars, forks and languages update automatically with each deploy."
       />
       <Section>
         {repos.length === 0 ? (

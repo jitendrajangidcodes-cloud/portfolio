@@ -6,6 +6,7 @@ import { personJsonLd } from '@/lib/seo';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { AmbientBackground } from '@/components/three/ambient-background';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-dvh font-sans">
         <ThemeProvider>
+          <AmbientBackground />
           {/* Skip link for keyboard & screen-reader users. */}
           <a
             href="#main"

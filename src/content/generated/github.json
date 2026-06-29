@@ -1,13 +1,29 @@
 {
-  "fetchedAt": "2026-06-29T18:53:40.719Z",
+  "fetchedAt": "2026-06-29T19:08:33.442Z",
   "user": {
     "login": "jitendrajangidcodes-cloud",
     "name": null,
     "bio": null,
     "followers": 0,
-    "publicRepos": 0,
+    "publicRepos": 1,
     "avatarUrl": "https://avatars.githubusercontent.com/u/231191017?v=4",
     "htmlUrl": "https://github.com/jitendrajangidcodes-cloud"
   },
-  "repos": []
+  "repos": [
+    {
+      "name": "portfolio",
+      "fullName": "jitendrajangidcodes-cloud/portfolio",
+      "description": "Premium, content-driven personal brand & portfolio platform (Next.js, static-exported to GitHub Pages).",
+      "htmlUrl": "https://github.com/jitendrajangidcodes-cloud/portfolio",
+      "homepage": null,
+      "language": "TypeScript",
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "pushedAt": "2026-06-29T19:02:46Z",
+      "archived": false,
+      "fork": false
+    }
+  ]
 }

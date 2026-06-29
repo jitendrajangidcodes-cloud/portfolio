@@ -1,7 +1,8 @@
 'use client';
 
+import * as React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { profile } from '@/content/profile';
 import { Button } from '@/components/ui/button';
@@ -10,9 +11,25 @@ import { Typewriter } from '@/components/motion/typewriter';
 import { HeroCanvas } from '@/components/three/hero-canvas';
 
 export function Hero() {
+  // Cursor-following spotlight overlay.
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const spotlight = useMotionTemplate`radial-gradient(500px circle at ${mx}px ${my}px, hsl(var(--primary) / 0.12), transparent 60%)`;
+
+  function onMove(e: React.PointerEvent<HTMLElement>) {
+    const r = e.currentTarget.getBoundingClientRect();
+    mx.set(e.clientX - r.left);
+    my.set(e.clientY - r.top);
+  }
+
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" onPointerMove={onMove}>
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 hidden md:block motion-reduce:!hidden"
+        style={{ background: spotlight }}
+      />
 
       <div className="container grid items-center gap-10 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
         <div>

@@ -41,6 +41,31 @@ export default function ContactPage() {
               </div>
             </a>
 
+            <a
+              href="tel:+919929003090"
+              className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
+            >
+              <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Icons.Phone className="size-5" />
+              </span>
+              <div>
+                <p className="font-medium">Phone</p>
+                <p className="text-sm text-muted-foreground">+91 99290 03090</p>
+              </div>
+            </a>
+
+            {profile.location && (
+              <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-5">
+                <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icons.MapPin className="size-5" />
+                </span>
+                <div>
+                  <p className="font-medium">Location</p>
+                  <p className="text-sm text-muted-foreground">{profile.location}</p>
+                </div>
+              </div>
+            )}
+
             {profile.socials
               .filter((s) => s.href.startsWith('http'))
               .map((s) => {

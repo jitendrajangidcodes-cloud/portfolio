@@ -42,11 +42,11 @@ export const automationCapabilities: Capability[] = [
   {
     title: 'CI/CD pipelines',
     description:
-      'I automate build and release. My projects use GitHub Actions for release pipelines, ' +
-      'and I script local build/deploy flows end-to-end.',
+      'I automate build, test and release with Git, GitHub Actions, Jenkins and Docker — ' +
+      'driving automated deployments in production at Ongraph and across my own projects.',
     icon: 'GitBranch',
     evidence: [{ label: 'Reminder (CI release pipeline)', href: '/projects/reminder-app/' }],
-    tags: ['GitHub Actions', 'Release automation'],
+    tags: ['GitHub Actions', 'Jenkins', 'Docker', 'Release automation'],
   },
   {
     title: 'Cross-tool integrations',
@@ -70,6 +70,15 @@ export const automationCapabilities: Capability[] = [
 
 export const cloudCapabilities: Capability[] = [
   {
+    title: 'Production cloud on AWS & GCP',
+    description:
+      'I deploy and operate scalable web applications in production on AWS (EC2, S3, Lambda) ' +
+      'and Google Cloud (Firebase, Cloud Functions), including microservices architectures and ' +
+      'cloud-based delivery pipelines — work I’ve led for 9+ years at Ongraph Technologies.',
+    icon: 'Cloud',
+    tags: ['AWS', 'GCP', 'Microservices', 'Production'],
+  },
+  {
     title: 'Cloud sync engines',
     description:
       'I build reliable two-way synchronisation between devices and the cloud, handling the ' +
@@ -86,14 +95,5 @@ export const cloudCapabilities: Capability[] = [
     icon: 'Network',
     evidence: [{ label: 'Workspace Sync', href: '/projects/workspace/' }],
     tags: ['LAN', 'Peer sync'],
-  },
-  {
-    title: 'GCP & deployment',
-    description:
-      'I deploy and operate on Google Cloud via the gcloud CLI and Drive APIs, and host static ' +
-      'sites on GitHub Pages with automated build pipelines. Deepening cloud-architecture ' +
-      'skills is an active learning track.',
-    icon: 'Cloud',
-    tags: ['GCP', 'gcloud', 'GitHub Pages', 'Learning'],
   },
 ];

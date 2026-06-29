@@ -1,7 +1,8 @@
 'use client';
 
+import * as React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight, Star, GitFork } from 'lucide-react';
 import type { Project } from '@/types/content';
 import { getRepo } from '@/lib/github';
@@ -20,12 +21,50 @@ export function ProjectCard({ project }: { project: Project }) {
   // Live GitHub stats if the project is linked to a repo and the snapshot has it.
   const repo = project.repo ? getRepo(project.repo) : undefined;
 
+  // Pointer-driven 3D tilt (holographic feel). Disabled for reduced-motion via CSS.
+  const ref = React.useRef<HTMLDivElement>(null);
+  const px = useMotionValue(0.5);
+  const py = useMotionValue(0.5);
+  const rotateX = useSpring(useTransform(py, [0, 1], [8, -8]), { stiffness: 200, damping: 18 });
+  const rotateY = useSpring(useTransform(px, [0, 1], [-8, 8]), { stiffness: 200, damping: 18 });
+  const glareX = useTransform(px, [0, 1], ['0%', '100%']);
+  const glareY = useTransform(py, [0, 1], ['0%', '100%']);
+
+  function onMove(e: React.PointerEvent) {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    px.set((e.clientX - r.left) / r.width);
+    py.set((e.clientY - r.top) / r.height);
+  }
+  function onLeave() {
+    px.set(0.5);
+    py.set(0.5);
+  }
+
   return (
     <motion.article
-      whileHover={{ y: -6 }}
+      ref={ref}
+      onPointerMove={onMove}
+      onPointerLeave={onLeave}
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
+      whileHover={{ y: -6, scale: 1.015 }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card [transform-style:preserve-3d] motion-reduce:!transform-none"
     >
+      {/* Moving glare highlight that tracks the pointer. */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background: useTransform(
+            [glareX, glareY],
+            ([x, y]) =>
+              `radial-gradient(420px circle at ${x} ${y}, hsl(var(--primary) / 0.18), transparent 45%)`
+          ),
+        }}
+      />
+
       {/* Accent header — generated gradient keeps the grid lively without images. */}
       <div
         className={cn(
