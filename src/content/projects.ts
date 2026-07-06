@@ -60,52 +60,6 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    slug: 'flexconvert',
-    name: 'FlexConvert',
-    tagline: 'All-in-one, offline-first unit, data & live converter for Android.',
-    description:
-      'Convert across 17 measurement categories, run live currency conversion, and use a set of ' +
-      'built-in fabrication tools — all from one fast, offline-first Flutter app.',
-    status: 'active',
-    period: '2025',
-    platforms: ['android'],
-    stack: ['Flutter', 'Dart', 'Offline-first'],
-    weight: 70,
-    featured: true,
-    highlights: [
-      '17 measurement categories in a single app',
-      'Live currency conversion with offline fallback',
-      'Fast, offline-first architecture',
-    ],
-    // repo: 'jitendrajangidcodes-cloud/FlexConvert',
-    accent: 'from-amber-500/30 to-yellow-500/10',
-    links: [],
-  },
-  {
-    slug: 'workspace',
-    name: 'Workspace',
-    tagline: 'Tauri 2 desktop suite: LAN workspace sync + daily work-log builder.',
-    description:
-      'A Tauri 2 desktop app bundling two developer productivity tools. Workspace Sync keeps a ' +
-      'development workspace coherent across multiple machines over the LAN. Work Log Builder ' +
-      'connects Jira, Google, Slack and GitHub to assemble structured daily work-log entries via ' +
-      'a manual external-AI workflow — the app itself never calls an AI API.',
-    status: 'active',
-    period: '2026',
-    platforms: ['desktop'],
-    stack: ['Tauri 2', 'Rust', 'TypeScript', 'React'],
-    weight: 80,
-    featured: true,
-    highlights: [
-      'Cross-machine workspace sync over LAN',
-      'Integrations with Jira, Google, Slack and GitHub',
-      'Privacy-respecting: assembles logs without calling any AI API itself',
-    ],
-    repo: 'jitendrajangidcodes-cloud/workspace',
-    accent: 'from-sky-500/30 to-blue-500/10',
-    links: [],
-  },
-  {
     slug: 'ai-scanner',
     name: 'AI Scanner',
     tagline: 'Finds anything in your screenshots with on-device AI summaries and semantic search.',
@@ -128,23 +82,6 @@ export const projects: Project[] = [
     ],
     cover: 'https://store.pnsjy.in/assets/icons/ai-scanner.png',
     accent: 'from-purple-500/30 to-fuchsia-500/10',
-    links: [],
-  },
-  {
-    slug: 'mirrordrive',
-    name: 'MirrorDrive',
-    tagline: 'Two-way file sync between mobile storage and Google Drive.',
-    description:
-      'A Flutter app that performs two-way synchronisation between local mobile storage and ' +
-      'Google Drive, keeping files mirrored across device and cloud.',
-    status: 'active',
-    period: '2025',
-    platforms: ['android'],
-    stack: ['Flutter', 'Dart', 'Google Drive API'],
-    weight: 65,
-    featured: true,
-    highlights: ['Two-way sync between device storage and Google Drive'],
-    accent: 'from-fuchsia-500/30 to-pink-500/10',
     links: [],
   },
 ];

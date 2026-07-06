@@ -66,12 +66,17 @@ const config: Config = {
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
+        'buddy-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.6s ease-out both',
         'gradient-pan': 'gradient-pan 8s ease infinite',
         marquee: 'marquee 40s linear infinite',
         shimmer: 'shimmer 2s infinite',
+        'buddy-bounce': 'buddy-bounce 3s ease-in-out infinite',
       },
     },
   },

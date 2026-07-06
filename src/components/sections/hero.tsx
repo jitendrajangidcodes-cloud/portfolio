@@ -1,13 +1,13 @@
 'use client';
 
 import * as React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { profile } from '@/content/profile';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { PnsjyLogo } from '@/components/ui/pnsjy-logo';
 import { Typewriter } from '@/components/motion/typewriter';
 import { HeroCanvas } from '@/components/three/hero-canvas';
 
@@ -40,14 +40,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/pnsjy-mark.png`}
-              alt="PNSJY logo"
-              width={72}
-              height={72}
-              className="rounded-2xl shadow-lg"
-              priority
-            />
+            <PnsjyLogo size={56} />
           </motion.div>
 
           <motion.div
