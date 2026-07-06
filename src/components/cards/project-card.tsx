@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight, Star, GitFork } from 'lucide-react';
@@ -78,9 +79,20 @@ export function ProjectCard({ project }: { project: Project }) {
             {statusLabel[project.status]}
           </Badge>
         </span>
-        <span className="absolute bottom-3 left-4 text-3xl font-black tracking-tight text-foreground/80">
-          {project.name}
-        </span>
+        <div className="absolute bottom-3 left-4 flex items-center gap-3">
+          {project.cover && (
+            <Image
+              src={project.cover}
+              alt={`${project.name} icon`}
+              width={48}
+              height={48}
+              className="rounded-xl shadow-lg ring-1 ring-white/20"
+            />
+          )}
+          <span className="text-3xl font-black tracking-tight text-foreground/80">
+            {project.name}
+          </span>
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-5">

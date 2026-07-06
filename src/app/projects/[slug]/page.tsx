@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Github, Star, GitFork, Clock } from 'lucide-react';
@@ -46,6 +47,18 @@ export default async function ProjectDetailPage({
   return (
     <>
       <PageHeader eyebrow={project.period ?? 'Project'} title={project.name} lead={project.tagline} />
+
+      {project.cover && (
+        <div className="container -mt-4 mb-4">
+          <Image
+            src={project.cover}
+            alt={`${project.name} icon`}
+            width={72}
+            height={72}
+            className="rounded-2xl shadow-lg"
+          />
+        </div>
+      )}
 
       <Section>
         <Button asChild variant="ghost" className="mb-8 -ml-2">
