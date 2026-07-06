@@ -7,6 +7,7 @@ import { Section } from '@/components/layout/section';
 import { Reveal } from '@/components/motion/reveal';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Experience',
@@ -89,6 +90,16 @@ export default function ExperiencePage() {
                     </li>
                   ))}
                 </ul>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                  >
+                    Visit <ExternalLink className="size-3.5" />
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}

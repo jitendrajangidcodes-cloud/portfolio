@@ -9,32 +9,8 @@ import type { Project } from '@/types/content';
  */
 export const projects: Project[] = [
   {
-    slug: 'pchat',
-    name: 'OChat',
-    tagline: 'Zero-knowledge, end-to-end-encrypted chat built on the Signal Protocol.',
-    description:
-      'A privacy-first messaging app where the server never sees plaintext. Messages are ' +
-      'encrypted on-device using the Signal Protocol (X3DH + Double Ratchet), giving forward ' +
-      'secrecy and post-compromise security. Designed so that even a fully compromised backend ' +
-      'reveals nothing about message contents.',
-    status: 'active',
-    period: '2025',
-    platforms: ['android', 'ios'],
-    stack: ['Flutter', 'Dart', 'Signal Protocol', 'Cryptography'],
-    weight: 100,
-    featured: true,
-    highlights: [
-      'X3DH key agreement + Double Ratchet for forward secrecy',
-      'Zero-knowledge server design — no plaintext ever leaves the device',
-      'Secure local key storage',
-    ],
-    // repo: 'jitendrajangidcodes-cloud/pchat', // TODO: confirm repo name to enable live stats
-    accent: 'from-emerald-500/30 to-teal-500/10',
-    links: [],
-  },
-  {
-    slug: 'vault-guard',
-    name: 'Aegis Wallet',
+    slug: 'cards',
+    name: 'Cards',
     tagline: 'Offline, biometric-locked vault for payment cards with on-device OCR.',
     description:
       'A security-hardened mobile vault for payment cards. Scan the front and back of a card ' +
@@ -52,7 +28,7 @@ export const projects: Project[] = [
       'On-device OCR auto-extracts card details from camera scans',
       'Encrypted storage gated behind biometric authentication',
     ],
-    // repo: 'jitendrajangidcodes-cloud/vault_guard',
+    repo: 'jitendrajangidcodes-cloud/Cards-pub',
     accent: 'from-indigo-500/30 to-violet-500/10',
     links: [],
   },
@@ -128,6 +104,30 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    slug: 'ai-scanner',
+    name: 'AI Scanner',
+    tagline: 'Finds anything in your screenshots with on-device AI summaries and semantic search.',
+    description:
+      'Automatically finds new screenshots on your phone, extracts their text with on-device OCR, ' +
+      'and writes an on-device AI summary for each one — so you can later search by meaning ' +
+      '("headache medicine") and not just literal words. Share links in and they get captured and ' +
+      'summarised the same way. Every model runs entirely on-device (Gemma 3 1B for summaries, ' +
+      'Gecko for search embeddings) — no cloud, no account, no analytics.',
+    status: 'active',
+    period: '2026',
+    platforms: ['android'],
+    stack: ['Flutter', 'Dart', 'On-device OCR', 'Gemma 3', 'Semantic search'],
+    weight: 85,
+    featured: true,
+    highlights: [
+      'On-device OCR + AI summary for every screenshot, fully offline',
+      'Semantic search by meaning, not just literal keyword match',
+      'Pre-release — bundled on-device models, no cloud dependency',
+    ],
+    accent: 'from-purple-500/30 to-fuchsia-500/10',
+    links: [],
+  },
+  {
     slug: 'mirrordrive',
     name: 'MirrorDrive',
     tagline: 'Two-way file sync between mobile storage and Google Drive.',
@@ -138,10 +138,9 @@ export const projects: Project[] = [
     period: '2025',
     platforms: ['android'],
     stack: ['Flutter', 'Dart', 'Google Drive API'],
-    weight: 60,
-    featured: false,
+    weight: 65,
+    featured: true,
     highlights: ['Two-way sync between device storage and Google Drive'],
-    // repo: 'jitendrajangidcodes-cloud/MirrorDrive',
     accent: 'from-fuchsia-500/30 to-pink-500/10',
     links: [],
   },

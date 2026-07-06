@@ -82,6 +82,7 @@ export interface ClientProject {
   description: string;
   stack: string[];
   org: string;
+  link?: string;
 }
 
 export interface Certification {
