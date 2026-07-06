@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/seo';
 import { experience } from '@/content/experience';
+import { clientWork } from '@/content/client-work';
 import { PageHeader } from '@/components/layout/page-header';
 import { Section } from '@/components/layout/section';
 import { Reveal } from '@/components/motion/reveal';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Experience',
@@ -64,6 +66,33 @@ export default function ExperiencePage() {
             ))}
           </ol>
         )}
+      </Section>
+
+      <Section>
+        <h2 className="text-2xl font-semibold">Client work at Ongraph Technologies</h2>
+        <p className="mt-2 text-muted-foreground">
+          Selected projects delivered as an employee — no public repos, so no GitHub stats here.
+        </p>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {clientWork.map((project) => (
+            <Card key={project.name}>
+              <CardHeader>
+                <CardTitle>{project.name}</CardTitle>
+                <CardDescription>{project.tagline}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{project.description}</p>
+                <ul className="mt-3 flex flex-wrap gap-1.5">
+                  {project.stack.map((t) => (
+                    <li key={t}>
+                      <Badge variant="outline">{t}</Badge>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </Section>
     </>
   );

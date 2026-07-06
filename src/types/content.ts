@@ -75,6 +75,15 @@ export interface ExperienceItem {
   kind: 'work' | 'independent' | 'education' | 'volunteer';
 }
 
+/** A project delivered as employer/client work — no public repo, no live GitHub stats. */
+export interface ClientProject {
+  name: string;
+  tagline: string;
+  description: string;
+  stack: string[];
+  org: string;
+}
+
 export interface Certification {
   name: string;
   issuer: string;
