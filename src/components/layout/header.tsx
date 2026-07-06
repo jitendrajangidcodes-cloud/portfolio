@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -36,9 +37,13 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between gap-4">
         <Link href="/" className="group flex items-center gap-2 font-bold tracking-tight">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-sm text-primary-foreground shadow-md transition-transform group-hover:scale-105">
-            JJ
-          </span>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/pnsjy-mark.png`}
+            alt="PNSJY logo"
+            width={36}
+            height={36}
+            className="rounded-lg shadow-md transition-transform group-hover:scale-105"
+          />
           <span className="hidden sm:inline">{siteConfig.shortName}</span>
         </Link>
 

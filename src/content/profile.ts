@@ -42,8 +42,11 @@ export const profile: Profile = {
   avatar: '/images/avatar.svg', // TODO: drop a real photo at /public/images/avatar.jpg and update
   socials: [
     { label: 'GitHub', href: 'https://github.com/jitendrajangidcodes-cloud', icon: 'Github' },
-    // TODO: add your real LinkedIn/X URLs, or remove entries you don't use.
-    { label: 'LinkedIn', href: '#', icon: 'Linkedin' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/jitendra-kumar-jangid-832910110',
+      icon: 'Linkedin',
+    },
     { label: 'Email', href: 'mailto:jitendrajangid.codes@gmail.com', icon: 'Mail' },
     { label: 'Phone', href: 'tel:+919929003090', icon: 'Phone' },
   ],
