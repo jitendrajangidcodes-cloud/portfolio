@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -10,6 +9,8 @@ import { navItems, siteConfig } from '@/content/site';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
+import { InstallButton } from '@/components/layout/install-button';
+import { PnsjyLogo } from '@/components/ui/pnsjy-logo';
 
 const primary = navItems.filter((i) => i.primary);
 
@@ -37,13 +38,9 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between gap-4">
         <Link href="/" className="group flex items-center gap-2 font-bold tracking-tight">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/pnsjy-mark.png`}
-            alt="PNSJY logo"
-            width={36}
-            height={36}
-            className="rounded-lg shadow-md transition-transform group-hover:scale-105"
-          />
+          <span className="inline-flex transition-transform group-hover:scale-105">
+            <PnsjyLogo size={30} />
+          </span>
           <span className="hidden sm:inline">{siteConfig.shortName}</span>
         </Link>
 
@@ -70,6 +67,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
+          <InstallButton />
           <ThemeToggle />
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <Link href="/contact/">Let’s talk</Link>
