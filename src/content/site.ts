@@ -9,9 +9,7 @@ export const siteConfig = {
   description:
     'Technical Lead and full-stack engineer with 9+ years building scalable web apps — ' +
     'MEAN stack, React/Next.js, AWS & GCP — and privacy-first mobile apps on the side.',
-  // TODO: set to your real deployed origin, e.g. a custom domain or
-  // https://jitendrajangidcodes-cloud.github.io/portfolio
-  url: 'https://jitendrajangidcodes-cloud.github.io/portfolio',
+  url: 'https://pnsjy.in',
   locale: 'en_US',
   keywords: [
     'Jitendra Jangid',
@@ -24,6 +22,8 @@ export const siteConfig = {
     'AWS',
     'Google Cloud',
     'Flutter Developer',
+    'Ongraph Technologies',
+    'Jaipur',
     'Portfolio',
   ],
 } as const;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/content/site';
+import { profile } from '@/content/profile';
 
 /**
  * Build per-page metadata with sensible, SEO-complete defaults.
@@ -14,7 +15,7 @@ export function buildMetadata(opts: {
   const title = opts.title ? `${opts.title} — ${siteConfig.shortName}` : siteConfig.title;
   const description = opts.description ?? siteConfig.description;
   const url = `${siteConfig.url}${opts.path ?? ''}`;
-  const image = opts.image ?? `${siteConfig.url}/og.png`;
+  const image = opts.image ?? `${siteConfig.url}/opengraph-image`;
 
   return {
     title,
@@ -49,6 +50,9 @@ export function personJsonLd() {
     worksFor: { '@type': 'Organization', name: 'Ongraph Technologies' },
     alumniOf: { '@type': 'CollegeOrUniversity', name: 'Arya College' },
     address: { '@type': 'PostalAddress', addressLocality: 'Jaipur', addressCountry: 'IN' },
-    sameAs: ['https://github.com/jitendrajangidcodes-cloud'],
+    email: profile.email,
+    sameAs: profile.socials
+      .map((s) => s.href)
+      .filter((href) => href.startsWith('http')),
   };
 }

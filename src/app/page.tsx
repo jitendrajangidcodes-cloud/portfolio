@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { buildMetadata } from '@/lib/seo';
 import { Hero } from '@/components/sections/hero';
 import { CTA } from '@/components/sections/cta';
 import { Section, SectionHeading } from '@/components/layout/section';
@@ -14,6 +16,8 @@ import { featuredProjects } from '@/content/projects';
 import { skillGroups } from '@/content/skills';
 import { aiCapabilities } from '@/content/capabilities';
 import { profile } from '@/content/profile';
+
+export const metadata: Metadata = buildMetadata({ path: '/' });
 
 export default function HomePage() {
   const stats = profile.stats;
