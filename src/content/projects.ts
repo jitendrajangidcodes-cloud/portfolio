@@ -60,6 +60,32 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    slug: 'twinclean',
+    name: 'TwinClean',
+    tagline: 'Finds exact duplicate files and lets you clean them safely.',
+    description:
+      'An Android duplicate-file cleaner that finds exact copies across photos, videos, audio and ' +
+      'documents, grouping every match so you can review before cleaning. Matches are verified with ' +
+      'a full SHA-256 checksum over the whole file — identical content is the only thing that matches, ' +
+      'never "similar looking" — and Smart Select keeps the newest, best copy by default. Cleaning ' +
+      'moves files to an in-app Trash that stays restorable for 30 days (single file, whole group, or ' +
+      'everything), never deleting originals outright. No cloud, no account, no analytics.',
+    status: 'active',
+    period: '2026',
+    platforms: ['android'],
+    stack: ['Flutter', 'Dart', 'Riverpod', 'Drift', 'SHA-256', 'WorkManager'],
+    weight: 88,
+    featured: true,
+    highlights: [
+      'SHA-256-verified exact matching in a background isolate — never fuzzy',
+      'Smart Select auto-keeps the best copy; each group shows its match evidence',
+      '30-day recoverable Trash with single-file, whole-group, or full restore',
+    ],
+    cover: 'https://store.pnsjy.in/assets/icons/twinclean.png',
+    accent: 'from-amber-500/30 to-yellow-500/10',
+    links: [],
+  },
+  {
     slug: 'ai-scanner',
     name: 'AI Scanner',
     tagline: 'Finds anything in your screenshots with on-device AI summaries and semantic search.',
