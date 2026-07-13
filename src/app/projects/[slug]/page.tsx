@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Github, Star, GitFork, Clock } from 'lucide-react';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, softwareApplicationJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 import { projects, getProject } from '@/content/projects';
 import { getRepo } from '@/lib/github';
 import { PageHeader } from '@/components/layout/page-header';
@@ -46,6 +46,22 @@ export default async function ProjectDetailPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd(project)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: 'Home', path: '/' },
+              { name: 'Projects', path: '/projects/' },
+              { name: project.name, path: `/projects/${project.slug}/` },
+            ])
+          ),
+        }}
+      />
       <PageHeader eyebrow={project.period ?? 'Project'} title={project.name} lead={project.tagline} />
 
       {project.cover && (

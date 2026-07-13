@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { ArrowLeft, Clock } from 'lucide-react';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, blogPostingJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 import { getAllPosts, getPost } from '@/lib/blog';
 import { PageHeader } from '@/components/layout/page-header';
 import { Section } from '@/components/layout/section';
@@ -37,6 +37,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd(post)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: 'Home', path: '/' },
+              { name: 'Blog', path: '/blog/' },
+              { name: post.title, path: `/blog/${post.slug}/` },
+            ])
+          ),
+        }}
+      />
       <PageHeader eyebrow={formatDate(post.date)} title={post.title} lead={post.description} />
       <Section>
         <div className="mx-auto max-w-3xl">

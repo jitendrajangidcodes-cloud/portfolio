@@ -7,8 +7,8 @@ export const siteConfig = {
   shortName: 'Jitendra',
   title: 'Jitendra Jangid — Technical Lead & Full-Stack Engineer',
   description:
-    'Technical Lead and full-stack engineer with 9+ years building scalable web apps — ' +
-    'MEAN stack, React/Next.js, AWS & GCP — and privacy-first mobile apps on the side.',
+    'Technical Lead & full-stack engineer, 9+ years building scalable web apps with MEAN, ' +
+    'React/Next.js, AWS & GCP — plus privacy-first mobile apps on the side.',
   url: 'https://pnsjy.in',
   locale: 'en_US',
   keywords: [
