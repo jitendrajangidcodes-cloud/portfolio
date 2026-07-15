@@ -32,7 +32,7 @@ Other scripts:
 ```bash
 npm run build        # static export to ./out (runs the GitHub sync first)
 npm run typecheck    # tsc --noEmit
-npm run lint         # next lint
+npm run lint         # eslint .
 npm test             # vitest
 npm run sync:github  # refresh src/content/generated/github.json
 ```

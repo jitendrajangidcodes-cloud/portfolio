@@ -12,18 +12,17 @@ No secrets required. After `git clone`:
 # Toolchain (once): Node.js LTS + npm.
 npm install
 npm run dev    # local dev server
-npm run build  # production build (Next.js)
-npm start      # serve the production build
+npm run build  # static export to ./out (Next.js output: 'export')
+npx serve out  # serve the exported static site (next start is unsupported with export)
 ```
 
 `node_modules/`, `.next/`, and `out/` are generated — do not copy them; `npm install` / `npm run
 build` regenerate everything.
 
 ## Global rules
-- **Brevity.** Shortest response that fully completes the task.
-- **Approval gate.** Wait for explicit "yes"/"go" for non-trivial changes. Trivial = single-file fix.
-- **Verification.** Always `npm run build` before reporting completion. Never claim success unverified.
-- **Commits.** No conventional-commit prefixes. On main: plain message. No trailers.
-- **Safety.** No git push / force-push / PR without per-action confirmation.
-- **Secrets.** PUBLIC repo — never commit secrets. If any credential is ever needed, use an
-  untracked `.env.local` (already gitignored) and document the required keys in `.env.example`.
+Global agent rules (brevity, approval gate, verify-before-done, commit/push safety) live in
+`~/.claude/CLAUDE.md` and `~/.claude/AGENTS.md` — follow those; they are not re-pasted here.
+
+**Repo-specific override — this repo is PUBLIC (see warning at top).** Never commit secrets. This
+static site needs none at runtime; if a build-time credential is ever required, use an untracked
+`.env.local` (already gitignored) and document the required keys in a committed `.env.example`.

@@ -49,7 +49,7 @@ scripts/fetch-github.mjs ──► content/generated/github.json (live stars/for
 - All pages are Server Components except interactive islands (`'use client'`):
   header, theme toggle, motion wrappers, project gallery filter, contact form, 3D hero.
 - Dynamic routes (`projects/[slug]`, `blog/[slug]`) use `generateStaticParams` so every
-  page is pre-rendered. `params` is awaited (Next 15 async params).
+  page is pre-rendered. `params` is awaited (async params, Next 15+; repo is on Next 16).
 - `trailingSlash: true` keeps nested routes resolvable on static hosts.
 
 ## Styling system
