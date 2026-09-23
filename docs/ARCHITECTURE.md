@@ -1,15 +1,8 @@
-# Architecture
+# portfolio — Architecture notes
 
-## Principles
-
-1. **Content is data.** Facts live in `src/content/*` as typed objects/MDX. Presentation
-   never hard-codes content. This is what makes the site cheap to maintain for a decade.
-2. **Truthful by construction.** Types and empty-states are designed so the site degrades
-   to "nothing to show yet" rather than inviting fabrication.
-3. **Static-first.** Everything renders at build time (`output: 'export'`). No server,
-   no runtime data fetching — fast, cheap, and GitHub-Pages-friendly.
-4. **Progressive enhancement.** Heavy/animated bits (the 3D hero) load lazily and respect
-   `prefers-reduced-motion` and low-power devices.
+Deep reference for the site's structure. The architecture invariants (content is data, truthful
+by construction, static-first, progressive enhancement) live in [`CORE.md`](../CORE.md) and are
+not repeated here.
 
 ## Layers
 
@@ -21,18 +14,18 @@ src/
 │   ├── <area>/     about, projects, skills, ai, automation, cloud,
 │   │               experience, open-source, blog, certifications,
 │   │               learning, contact
-│   ├── sitemap.ts / robots.ts / opengraph-image.tsx   SEO, generated at build
+│   ├── sitemap.ts / robots.ts / opengraph-image.tsx / manifest.ts   SEO + PWA, generated at build
 │   └── not-found.tsx
 ├── components/
-│   ├── ui/         shadcn-style primitives (button, card, badge, icon)
-│   ├── layout/     header, footer, section, page-header, theme
+│   ├── ui/         shadcn-style primitives (button, card, badge, icon, pnsjy-logo)
+│   ├── layout/     header, footer, section, page-header, theme, install-button
 │   ├── motion/     reveal, typewriter (Framer Motion)
-│   ├── three/      lazy R3F hero scene
+│   ├── three/      lazy R3F hero scene + ambient background
 │   ├── cards/      project, skill, capability cards
-│   └── sections/   hero, cta, project gallery, capability grid, contact form
+│   └── sections/   hero, cta, project gallery, capability grid, contact form, tech stack/marquee
 ├── content/        ← EDIT HERE. Data + MDX. Single source of truth.
-│   └── generated/  github.json (rebuilt at build time; committed fallback)
-├── lib/            utils, seo, github (build-time data), blog (MDX loader)
+│   └── generated/  github.json (rebuilt at build time; committed fallback), tech-icons.json
+├── lib/            utils, seo, tech, github (build-time data), blog (MDX loader)
 └── types/          content domain types
 ```
 
@@ -65,6 +58,8 @@ scripts/fetch-github.mjs ──► content/generated/github.json (live stars/for
   devices and reduced-motion.
 - Images use `unoptimized` (no server) — ship pre-sized assets in `public/`.
 - Fonts via `next/font` (self-hosted, `display: swap`).
+- `public/sw.js` is a pass-through service worker (no caching) that exists only so the browser
+  treats the site as installable; `install-button.tsx` registers it.
 
 ## Accessibility
 

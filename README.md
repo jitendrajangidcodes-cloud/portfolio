@@ -35,6 +35,7 @@ npm run typecheck    # tsc --noEmit
 npm run lint         # eslint .
 npm test             # vitest
 npm run sync:github  # refresh src/content/generated/github.json
+npm run sync:icons   # refresh src/content/generated/tech-icons.json
 ```
 
 ## The golden rule: content ≠ presentation
@@ -49,6 +50,7 @@ the data says, so updates are quick and safe.
 | `content/skills.ts`         | Skill groups + self-rated meters                  |
 | `content/experience.ts`     | Experience timeline (honesty-first labels)        |
 | `content/capabilities.ts`   | AI / Automation / Cloud capability cards          |
+| `content/client-work.ts`    | Client work entries                               |
 | `content/certifications.ts` | Credentials (empty until real ones exist)         |
 | `content/learning.ts`       | Learning roadmap                                  |
 | `content/site.ts`           | Navigation + SEO defaults                         |
@@ -98,13 +100,13 @@ Your markdown here.
 1. Push to `main`.
 2. In the repo: **Settings → Pages → Build and deployment → Source = GitHub Actions**.
 3. The [deploy workflow](.github/workflows/deploy.yml) builds a static export and
-   publishes it. `NEXT_PUBLIC_BASE_PATH` is injected automatically so assets resolve
-   under `/portfolio`.
+   publishes it to the custom domain `pnsjy.in` (`public/CNAME`), served at the root.
 
-**Custom domain?** Set `siteConfig.url` in `content/site.ts`, add a `CNAME` file to
-`public/`, and clear `NEXT_PUBLIC_BASE_PATH` (root path).
+`NEXT_PUBLIC_BASE_PATH` comes from the Pages `base_path`, which is empty only while the
+custom domain is set in **Settings → Pages**. Without it, the site would serve under
+`/portfolio`. Preview the real export locally with `npx serve out`.
 
-See [`docs/`](docs) for architecture, customization, and the improvement roadmap.
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for architecture notes.
 
 ## License
 

@@ -18,7 +18,7 @@ approval gate, verify-before-done, commit/push safety) live in `~/.claude/CLAUDE
 - **Truthful by construction.** Types and empty-states degrade to "nothing to show yet" rather than
   inviting fabrication. Never seed the site with invented credentials, projects, or metrics; replace
   or delete `// TODO` placeholders with real facts only.
-- Not a Flutter/APK app — the fleet release-distribution flow (app-store hub, `scripts/release.sh`,
+- Not a Flutter/APK app — the fleet release-distribution flow (PNSJY Store hub, `scripts/release.sh`,
   RELEASE.md) does NOT apply. This is a web-only repo; there is nothing to "install." No RELEASE.md.
 
 ## Build & Deploy
@@ -33,6 +33,7 @@ npm run typecheck    # tsc --noEmit
 npm run lint         # eslint .
 npm test             # vitest run
 npm run sync:github  # refresh src/content/generated/github.json (live stars/forks/langs)
+npm run sync:icons   # refresh src/content/generated/tech-icons.json
 npx serve out        # serve the exported static site (next start is unsupported with output:'export')
 ```
 

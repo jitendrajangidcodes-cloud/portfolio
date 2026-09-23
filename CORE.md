@@ -44,6 +44,7 @@ viewing projects, skills, experience, capabilities, and a blog. Public repo.
 | `scripts/fetch-tech-icons.mjs` | Tech-icon fetch (`sync:icons`) |
 | `next.config.mjs` | `output: 'export'`, `basePath` from `NEXT_PUBLIC_BASE_PATH`, `trailingSlash`, `images.unoptimized` |
 | `public/CNAME` | Custom domain `pnsjy.in` |
+| `public/sw.js` | Pass-through service worker (no caching) so the site is installable |
 | `.github/workflows/ci.yml` / `deploy.yml` | Quality gate + Pages deploy |
 | `docs/ARCHITECTURE.md` | Deep architecture notes (principles, layers, data flow, styling, a11y) |
 
@@ -99,7 +100,8 @@ Lazy R3F/Three.js hero, Framer Motion reveal/typewriter; reduced-motion and low-
 *Status: BUILT-AWAITING-VERIFY*
 
 ### F6 — SEO / PWA metadata
-Generated `sitemap.ts`, `robots.ts`, `opengraph-image.tsx`, `manifest.ts`, JSON-LD in layout.
+Generated `sitemap.ts`, `robots.ts`, `opengraph-image.tsx`, `manifest.ts`, JSON-LD in layout;
+install button registers `public/sw.js` so the site is installable.
 *Status: BUILT-AWAITING-VERIFY*
 
 ### F7 — Light/dark theming
